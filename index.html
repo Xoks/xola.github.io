@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = UTF-8>
+<title>IYDP</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link>
+<style>
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Optima;
+
+}
+
+
+a {
+  color: red;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: black;
+  color: red;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  font-family: Optima;
+  width: 25%;
+}
+
+
+.tablink:hover {
+  background-color: #7777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: black;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+img {
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+#Home {background-color: #E6E6FA;}
+#Events {background-color: #E6E6FA;}
+#Contact {background-color: #E6E6FA;}
+#About {background-color: #E6E6FA;}
+</style>
+
+</head>
+<body bgcolor='#E6E6FA'>
+
+<h1>Ilitha Youth Development Program (IYDP)</h1>
+
+
+<button class="tablink" onclick="openPage('Home', this, '#E6E6FA')"id="defaultOpen">Home</button>
+<button class="tablink" onclick="openPage('Events', this, '#E6E6FA')" >Events</button>
+<button class="tablink" onclick="openPage('Contact', this, '#E6E6FA')">Contact</button>
+<button class="tablink" onclick="openPage('About', this, '#E6E6FA')">About</button>
+
+<div id="Home" class="tabcontent">
+  <h1>Welcome to our website.....</h1>
+  <p>Awareness is us.....</p>
+  
+  <section>   <!-- setting pictures for slideshow-->
+  <img class="slides" src='child.png' style='width:50%'>
+  <img class='slides' src='food.jpg' style='width:50%'>
+  <img class='slides' src='poor.jpg' style='width:50%'>
+  <img class='slides' src='black.jpg' style='width:50%'>
+  </section>
+  
+</div>
+
+<div id="Events" class="tabcontent">
+  <h1>Events</h1>
+  <h2 style='font-family:Optima; color:red'>Upcoming 2020 events.....</h2>
+	<ul>
+	  <h3 style='font-family:Comic Sans MS;color:green'>May/Jun: Career Expo</h3>
+	  <p> This day is aimed at helping out curent Grade 12 learners at our community with applications to insitutions of higher eductation.
+	  We also aim to provide briefly, information about careers these learners can choose. Going forward, we plan to introduce what 4th Industrial
+	  Revolution (4IR) and career choices that will cater for it. </p>
+	  <h3 style='font-family:Comic Sans MS;color:green'>Nov/Dec: Awareness day</h3>
+	  <p>Arghh Mama Bear will write it :)</p>
+	</ul> 
+</div>
+
+<div id="Contact" class="tabcontent">
+  <h1>Contact</h1>
+  <p>Chat with us @ <a href="mailto:sinazompotulo@gmail.com?" target="_top">sinazompotulo@gmail.com</a></p>
+  <p>Follow us on twitter: @iydp and facebook:facebook_iydp</p>
+  
+</div>
+
+<div id="About" class="tabcontent">
+  <h1>About</h1>
+  <p>Who we are and what we do?</p>
+  <p> We are Qutsa and Qutsa is us .....blah blah blah</p>
+</div>
+
+<!-- JavaScript for the tabs -->
+
+<script>   
+
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+<!-- JavaScript for the Slideshow-->
+
+<script>
+
+var myIndex = 0;
+slideshow();
+
+function slideshow() {
+  var i;
+  var x = document.getElementsByClassName("slides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(slideshow, 5000);
+}
+</script>
+   
+
+
+</body>
+</html> 
+
+
